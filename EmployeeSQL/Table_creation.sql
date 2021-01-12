@@ -46,3 +46,14 @@ create table Employee
 );
 select * from employee
 
+Create table title 
+(
+	id serial,
+	Title_ID varchar,
+	Title varchar,
+	FOREIGN KEY(Title_ID) REFERENCES Employee(Emp_Title_ID)
+	
+
+);
+
+select * from title
