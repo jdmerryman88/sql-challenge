@@ -1,4 +1,4 @@
-drop table department;
+drop table employee;
 
 create table department
 (
@@ -12,11 +12,11 @@ select * from department;
 
 create table Department_Employee
 (
-	id serial primary key,
+	id serial,
 	Emp_No int,
 	Dept_No varchar,
-	FOREIGN KEY(Dept_No) REFERENCES department(Dept_No)
-
+	FOREIGN KEY(Dept_No) REFERENCES department(Dept_No),
+	primary key (Emp_No)
 );
 select * from department_employee
 
@@ -32,16 +32,17 @@ select * from department_manager
 
 create table Employee
 (
-	id serial primary key,
+	id serial ,
 	Emp_No int,
 	Emp_Title_ID varchar,
 	Birth_Date date,
 	First_Name varchar,
 	Last_Name varchar,
-	
-	
-	Dept_No varchar,
-	FOREIGN KEY(Dept_No) REFERENCES department(Dept_No)
+	Sex varchar,
+	Hire_Date date,
+	FOREIGN KEY(Emp_No) REFERENCES department_Employee(Emp_No),
+	primary key (Emp_Title_ID)
 
 );
-select * from department_employee
+select * from employee
+
