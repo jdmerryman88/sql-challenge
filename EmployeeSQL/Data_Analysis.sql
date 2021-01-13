@@ -30,3 +30,24 @@ department_manager.emp_no = employee.emp_no)
 	  inner join department on 
 	  department_manager.dept_no = department.dept_no ); 
 
+--4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+Select department_employee.emp_no as "Employee Number", 
+	employee.Last_name as "Last Name",
+	employee.First_name as "First Name" ,
+	department.Dept_Name as "Department Name"
+from((department_employee
+	  inner join employee on
+	  department_employee.emp_no = employee.emp_no)
+	 inner join department on
+	 department_employee.dept_no = department.dept_no);
+
+--5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+Select first_name as "First Name" , last_name as "Last Name" , sex as "Sex"
+From employee
+Where first_name = 'Hercules' and last_name like 'B%';
+
+
+
+
+
+
